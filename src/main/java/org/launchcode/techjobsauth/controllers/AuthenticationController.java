@@ -8,17 +8,20 @@ import org.launchcode.techjobsauth.models.data.UserRepository;
 import org.launchcode.techjobsauth.models.dto.LoginFormDTO;
 import org.launchcode.techjobsauth.models.dto.RegisterFormDTO;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.Optional;
 
+@Controller
 public class AuthenticationController {
 
     @Autowired
-    public UserRepository userRepository;
+    UserRepository userRepository;
 
     private static final String userSessionKey = "user";
 
